@@ -1,0 +1,119 @@
+<p>creerqr works!</p>
+
+<ng-container>
+
+ <div class="p-grid">
+
+ <div class='p-col-4'></div>
+
+<div class="p-col-4">
+
+<h2>Question/Reponse </h2>
+<form [formGroup]="qrForm" (ngSubmit)="saveQr()">
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Application: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="application" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Auteur de la question: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="auteurdelaquestion" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Format: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="format" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Date de la queston: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="datedelaquestion" >
+            </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Severite: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="severite" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Objet: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="objet" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Version: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="objet" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Libelle de la question: </label>
+            <div class="col-sm-2">
+                <textarea class="form-control" cols="60" rows="5" type="text" formControlName="libelledelaquestion" ></textarea>
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Date de la reponse: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="datedelareponse" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Ecart: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="ecart" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Auteur de la réponse: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="auteurdelareponse" >
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Libelle de la reponse: </label>
+            <div class="col-sm-2">
+                <textarea class="form-control" cols="60" rows="5" type="text" formControlName="libelledelareponse" ></textarea>
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Statut de la question: </label>
+            <div class="col-sm-2">
+                <input class="form-control" size="60" type="text" formControlName="statutquestion" >
+            </div>
+    </div>
+
+    <br>
+    <button  pButton type="button" label="Sauvegarder" class="ui-button-rounded" (click)="saveQr()"></button>
+    &nbsp;&nbsp;
+    <button   pButton type="button" label="Retour" class="ui-button-rounded ui-button-success" [routerLink]="['/qr']"></button>
+
+
+</form>
+</div>
+
+<div class="p-col-4"></div>
+
+</div>
+
+</ng-container>

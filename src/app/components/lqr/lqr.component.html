@@ -1,0 +1,93 @@
+<p>lqr works!</p>
+
+<ng-container *ngIf="lqr">
+
+    <h2>{{lqr.length}} Questions/Reponses</h2>  <p-button label="Créer une question" [routerLink]="['/creerqr']"></p-button>
+
+    <br>
+<!--
+    <p-table #dt  [scrollable]="true" scrollHeight="400px" [value]="lqr" [globalFilterFields]="['id','application','auteurdelaquestion','format','datedelaquestion','severite','objet','version','libelledelaquestion','datedelareponse','ecart','auteurdelareponse','libeledelareponse','statutdelaquestion']" [paginator]="true" [rows]="lqr.length" [rowsPerPageOptions]="[5,10,50,100,lqr.length]" paginatorPosition="bottom" >
+-->
+    <p-table [value]="lqr" [scrollable]="true" scrollHeight="400px">
+<!--
+        <ng-template pTemplate="caption">
+          <div style="text-align: right">
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+          </div>     
+        </ng-template>
+    -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th [pSortableColumn]= "'id'">id <p-sortIcon [field]="'id'"></p-sortIcon></th>
+               
+                <th [pSortableColumn]= "'application'">Application<p-sortIcon [field]="'application'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'auteurdelaquestion'">Auteur de la question<p-sortIcon [field]="'auteurdelaquestion'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'format'">Format<p-sortIcon [field]="'format'"></p-sortIcon></th>
+    
+                <th [pSortableColumn]= "'datedelaquestion'">Date de la question<p-sortIcon [field]="'datedelaquestion'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'severite'">Severite<p-sortIcon [field]="'severite'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'objet'">Objet<p-sortIcon [field]="'objet'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'version'">Version<p-sortIcon [field]="'version'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'libelledelaquestion'">Libelle de la question<p-sortIcon [field]="'libelledelaquestion'"></p-sortIcon></th>
+                
+                <th  [pSortableColumn]= "'datedelareponse'">date de la reponse<p-sortIcon [field]="'datedelareponse'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'ecart'">Ecart<p-sortIcon [field]="'ecart'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'auteurdelareponse'">Auteur de la réponse<p-sortIcon [field]="'auteurdelareponse'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'libelledelareponse'">Libelle de la réponse<p-sortIcon [field]="'libelledelareponse'"></p-sortIcon></th>
+    
+                <th  [pSortableColumn]= "'statutdelaquestion'">Statut de la question<p-sortIcon [field]="'statutdelaquestion'"></p-sortIcon></th>
+    
+            </tr>
+        </ng-template>
+        {{lqr.length }}
+    
+          <ng-template #started pTemplate="body" let-lqr >
+    
+              <tr [routerLink]="['/qr',lqr.id]">
+<!--                  <td ><i class="fas fa-grip-lines" pDraggable="lqr" (onDragStart)="dragStart($event,collaborateur)" (onDragEnd)="dragEnd($event)"></i>&nbsp;&nbsp;{{lqr.id}}</td>
+   -->            <td>{{lqr.id}}</td>
+                  <td>{{lqr.application}}</td>
+                  <td>{{lqr.auteurdelaquestion}}</td>
+                  <td>{{lqr.format}}</td>
+                  <td>{{lqr.datedelaquestion}}</td>
+                  <td>{{lqr.severite}}</td>
+                  <td>{{lqr.objet}}</td>
+                  <td>{{lqr.version}}</td>
+                  <td>{{lqr.libelledelaquestion | slice:0:35}} ... </td>
+                  <td>{{lqr.datedelareponse}}</td>
+                  <td>{{lqr.ecart}}</td>
+                  <td>{{lqr.auteurdelareponse}}</td>
+                  <td>{{lqr.libelledelareponse | slice:0:35}} ...</td>
+                  <td>{{lqr.statutquestion}}</td>
+
+                 
+               <!--
+                   <td> 
+                    <i class="icone far fa-eye fa-lg" (click)="viewDetailCollaborator(collaborateur)"> </i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="icone fas fa-exchange-alt fa-lg" (click)="getTransformByUid(collaborateur)" ></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="icone far fa-edit fa-lg" [routerLink]="['/collaborateurs',collaborateur.uid]"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="icone icone far fa-trash-alt" (click)="openTrash(collaborateur)"></i>
+                   </td>
+                -->  
+               
+              </tr>
+    
+          </ng-template>
+    
+      </p-table>
+      <p-button label="Créer une question" [routerLink]="['/creerqr']"></p-button>
+
+
+
+
+</ng-container>
